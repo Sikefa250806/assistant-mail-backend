@@ -5,6 +5,9 @@ const fetch = require("node-fetch");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("Assistant Mail Backend – OK");
+});
 
 app.post("/api/generate", async (req, res) => {
   const { mailInput, extra, tone } = req.body;
